@@ -2,9 +2,14 @@
 
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, IconButton, Button, MenuItem, Select, FormControl, CircularProgress } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import GeetaVerse from './GeetaVerse';
+// import LanguageIcon from '@mui/icons-material/Language';
+import { Language as LanguageIcon } from '@mui/icons-material'; // Import the Language icon
+
+
+
 
 const Sloka = () => {
   const { chapter_number } = useParams();
@@ -13,6 +18,11 @@ const Sloka = () => {
   const [audioUrl, setAudioUrl] = useState(`/audio/chapter${chapter_number}.mp3`); // Default audio URL based on chapter number
   const [isPlaying, setIsPlaying] = useState(false); // Audio play state
   const audioRef = useRef(null); // Reference to the audio element
+
+  const [selectedLanguage, setSelectedLanguage] = useState('en');  // Default language is English
+  const [loading, setLoading] = useState(false);  // To track API loading state
+  const [translatedSummary, setTranslatedSummary] = useState(singleData?.chapter_summary);  // Initially show chapter summary
+
 
   // Fetch chapter data
   const options = {
@@ -104,6 +114,33 @@ const Sloka = () => {
     }
   };
 
+
+  const handleLanguageChange = async (language) => {
+    setSelectedLanguage(language);
+    setLoading(true); // Start loading
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/translation/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          q: singleData?.chapter_summary,  // Original text to translate
+          target: language,  // Selected target language
+        }),
+      });
+
+      const data = await response.json();
+      setTranslatedSummary(data?.translatedText || 'Translation not available.');
+    } catch (error) {
+      console.error("Translation API Error:", error);
+      setTranslatedSummary('Error fetching translation');
+    } finally {
+      setLoading(false); // Stop loading
+    }
+  };
+
   return (
     <Box className="main-sloka" sx={{ backgroundColor: '#000', color: 'white', minHeight: '100vh' }}>
       <Box sx={{
@@ -128,6 +165,7 @@ const Sloka = () => {
             {singleData?.chapter_summary}
           </Typography>
         </Box>
+
 
         {/* Audio Controls Section */}
         <Box sx={{

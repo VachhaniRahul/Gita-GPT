@@ -10,4 +10,5 @@ urlpatterns = [
 
     path('login/', views.LoginAPIview.as_view()),
     path('register/', views.RegisterAPIview.as_view()),
+    path('translation/', views.TranslationAPIView.as_view())
 ]
