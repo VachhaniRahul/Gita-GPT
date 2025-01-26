@@ -1,2 +1,4 @@
 djangorestframework
-djangorestframework_simple_jwt
+djangorestframework-simplejwt
+googletrans
+django
