@@ -9,7 +9,7 @@
 //       <iframe
 //         style={{ height: "100%", width: "100%", border: "none" }}
 //         src="https://widget.botsonic.com/CDN/index.html?service-base-url=https%3A%2F%2Fapi-azure.botsonic.ai&token=e8c6e04c-9d95-43bc-9925-325794aef95d&base-origin=https%3A%2F%2Fbot.writesonic.com&instance-name=Botsonic&standalone=true&page-url=https%3A%2F%2Fbot.writesonic.com%2Fbots%2Fd302376f-4a99-439a-8448-8802a50de8df%2Fconnect"
-       
+
 //         title="gitaGPT"
 //       ></iframe>
 //       <div style={{ 
@@ -25,7 +25,7 @@
 //         justifyContent: "center",
 //         zIndex: 10
 //       }}>
-       
+
 //       </div>
 //     </div>
 //   );
@@ -98,6 +98,12 @@ const GitaGPT = () => {
         src="https://widget.botsonic.com/CDN/index.html?service-base-url=https%3A%2F%2Fapi-azure.botsonic.ai&token=e8c6e04c-9d95-43bc-9925-325794aef95d&base-origin=https%3A%2F%2Fbot.writesonic.com&instance-name=Botsonic&standalone=true&page-url=https%3A%2F%2Fbot.writesonic.com%2Fbots%2Fd302376f-4a99-439a-8448-8802a50de8df%2Fconnect"
         title="gitaGPT"
       ></iframe>
+    {/* <iframe
+    src="https://bot.elephant.ai/9bc96672-9446-4e4f-a404-b4ea6e24d422"
+    width="100%"
+    style={{ position: 'relative', height: '80vh', width: '100vw'  }}
+    title="GitaGPT"
+  ></iframe> */}
       <div
         style={{
           position: 'absolute',
@@ -113,7 +119,7 @@ const GitaGPT = () => {
           zIndex: 10,
         }}
       >
-        <button onClick={startListening} disabled={isListening}>
+        {/* <button onClick={startListening} disabled={isListening}>
           Start Listening
         </button>
         <button onClick={stopListening} disabled={!isListening}>
@@ -122,7 +128,7 @@ const GitaGPT = () => {
         <button onClick={sendToChatbot} disabled={!transcription}>
           Send to Chatbot
         </button>
-        <div>{transcription && <p>Transcription: {transcription}</p>}</div>
+        <div>{transcription && <p>Transcription: {transcription}</p>}</div> */}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 djangorestframework
 djangorestframework-simplejwt
-googletrans
+googletrans==4.0.0-rc1
+django-cors-headers
 django

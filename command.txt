@@ -1,0 +1,13 @@
+python3 -m venv myvenv
+source myvenv/bin/activate
+
+pip install -r r.txt
+python3 manage.py runserver        --- is if this not work then --> python manage.py runserver
+
+
+
+# for react
+npm install
+npm run dev
+
+
