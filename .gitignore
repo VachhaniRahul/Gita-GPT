@@ -1,0 +1,94 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+venv/
+env/
+.myvenv/
+pyenv/
+.venv/
+
+# Environment variable files
+.env
+.env.*
+
+# IDE and editor settings
+.idea/
+.vscode/
+*.swp
+*~
+
+# Test coverage reports
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.cache
+nosetests.xml
+pytest_cache/
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS-specific files
+.DS_Store
+
+# Windows-specific files
+Thumbs.db
+ehthumbs.db
+
+# Logs and debug files
+*.log
+*.out
+*.err
+
+# Compiled C extensions
+*.so
+
+# Distribution/Packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Celery beat schedule file
+celerybeat-schedule
+
+# SageMath-generated files
+*.sage.py
+
+# Sphinx documentation
+docs/_build/
+
+# Pyre type checker
+.pyre/
+
+# Mypy type checker
+.mypy_cache/
+
+# Bandit security linter
+.bandit/
+
+# Flask debugger files
+instance/
